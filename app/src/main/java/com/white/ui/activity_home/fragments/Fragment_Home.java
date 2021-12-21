@@ -95,7 +95,18 @@ public class Fragment_Home extends Fragment implements HomeFragmentView {
             Intent intent = new Intent(activity, EmergencyActivity.class);
             startActivity(intent);
         });
-
+        binding.cardViewNursing.setOnClickListener(view -> {
+            Intent intent = new Intent(activity, EmergencyActivity.class);
+            startActivity(intent);
+        });
+        binding.cardViewPharmacy.setOnClickListener(view -> {
+            Intent intent = new Intent(activity, DoctorActivity.class);
+            startActivity(intent);
+        });
+        binding.cardViewAdvice.setOnClickListener(view -> {
+            Intent intent = new Intent(activity, DoctorActivity.class);
+            startActivity(intent);
+        });
         binding.cardViewDoctor.setOnClickListener(view -> {
             Intent intent = new Intent(activity, DoctorActivity.class);
             intent.putExtra("lat", lat);
