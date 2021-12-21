@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/home"
+        android:title="@string/home"
+        android:icon="@drawable/ic_nav_home"
+        />
+
+    <item android:id="@+id/appointment"
+        android:title="@string/appointments"
+        android:icon="@drawable/ic_time"
+        />
+
+
+    <item android:id="@+id/medicine"
+        android:title="@string/medicine"
+        android:icon="@drawable/ic_drugs"
+        />
+
+    <item android:id="@+id/more"
+        android:title="@string/more"
+        android:icon="@drawable/ic_more"
+        />
+</menu>

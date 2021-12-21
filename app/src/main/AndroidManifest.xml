@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.white">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        tools:ignore="ScopedStorage" />
+
+    <application
+        android:name="com.white.share.App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="GoogleAppIndexingWarning"
+        tools:targetApi="m">
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+        <service
+            android:name="com.white.notification.FireBaseMessaging"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="com.white.ui.activity_reservation.ReservationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.chat_activity.ChatActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_room.ChatRoomActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_doctor_details.DoctorDetailsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_complete_clinic_reservision.CompleteClinicReservationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_edit_profile.EditprofileActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.notification_activity.NotificationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_reservision_detials.ReservationDetialsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <!--        <activity
+                    android:name="com.motmaen_client.ui.activity_live.LiveActivity"
+                    android:configChanges="orientation|screenSize|keyboardHidden"
+                    android:screenOrientation="portrait"
+                    android:windowSoftInputMode="adjustPan" />-->
+
+        <activity
+            android:name="com.white.ui.activity_live.LiveActivity"
+            android:configChanges="keyboard|orientation"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="nf9fdnp8r7xh64a" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.white.ui.activity_doctor.DoctorActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_emergency.EmergencyActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_contactus.ContactusActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_medical_advice.MedicalAdviceActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_shop_details.ShopDetailsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_location.LocationActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_google_nearby_places.GoogleNearybyPlacesActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_home.HomeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:exported="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+
+            <intent-filter
+                android:autoVerify="true"
+                tools:node="merge">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="motmaien.lamah005.com"
+                    android:pathPrefix="/share-app"
+                    android:scheme="http" />
+            </intent-filter>
+            <intent-filter
+                android:autoVerify="true"
+                tools:node="merge">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data
+                    android:host="motmaien.lamah005.com"
+                    android:pathPrefix="/share-app"
+                    android:scheme="http" />
+            </intent-filter>
+        </activity>
+        <receiver android:name="com.white.notification.AlarmBroadcast" />
+        <receiver android:name="com.white.notification.BootCompleteBroadcast">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.QUICKBOOT_POWERON" />
+            </intent-filter>
+        </receiver>
+<!--        <service-->
+<!--            android:name=".notification.LocalNotification"-->
+<!--            android:description="@string/app_name"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true"-->
+<!--            android:isolatedProcess="true"-->
+<!--            android:label="Notification" />-->
+
+        <!--        <service-->
+<!--        android:name=".notification.LocalNotification">-->
+<!--&lt;!&ndash;            android:exported="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:enabled="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:isolatedProcess="true"&ndash;&gt;-->
+<!--&lt;!&ndash;            android:stopWithTask="false"&ndash;&gt;-->
+<!--         >-->
+<!--&lt;!&ndash;            <intent-filter>&ndash;&gt;-->
+<!--&lt;!&ndash;                <action&ndash;&gt;-->
+<!--&lt;!&ndash;                    android:name = "app.tutorialspoint.com.notifyme.NotificationService" />&ndash;&gt;-->
+<!--&lt;!&ndash;                <category android:name= "android.intent.category.DEFAULT" />&ndash;&gt;-->
+<!--&lt;!&ndash;            </intent-filter>&ndash;&gt;-->
+<!--        </service>-->
+<!--        <receiver-->
+<!--            android:name=".notification.SensorRestarterBroadcastReceiver"-->
+<!--            android:enabled="true"-->
+<!--            android:exported="true"-->
+<!--            android:permission="android.permission.RECEIVE_BOOT_COMPLETED"-->
+
+<!--            android:label="RestartServiceWhenStopped">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="SensorRestarterBroadcastReceiver" />-->
+<!--            </intent-filter>-->
+<!--        </receiver>-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.TIME_TICK" />-->
+
+<!--            </intent-filter>-->
+<!--        </>-->
+
+        <activity
+            android:name="com.white.ui.activity_web_view.WebViewActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_sign_up.SignUpActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_patient_details.PatientDetailsActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <activity
+            android:name="com.white.ui.activity_favourite.FavouriteActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_confirm_code.ConfirmCodeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_login.LoginActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_language.LanguageActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name="com.white.ui.activity_splash.SplashActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Theme.AppCompat.Light.DarkActionBar" />
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/map_api_key" />
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+    </application>
+
+</manifest>

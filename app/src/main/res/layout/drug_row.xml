@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.white.models.DrugModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/gray0"
+            >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:textSize="15sp"
+            android:gravity="center_vertical"
+            android:background="@drawable/small_rounded_top_primary"
+            android:text="@{model.doctor_fk.specialization_fk.title}"
+            android:textColor="@color/white"
+            android:paddingStart="10dp"
+            android:paddingEnd="10dp"
+            />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/showmore"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center_vertical"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:text="@string/show_all"
+                android:gravity="center"
+                />
+        </LinearLayout>
+        </FrameLayout>
+      </androidx.cardview.widget.CardView>
+</layout>

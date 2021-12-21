@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+
+        <variable
+            name="lang"
+            type="String" />
+
+        <variable
+            name="messagemodel"
+            type="com.white.models.MessageModel" />
+    </data>
+
+    <RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layoutDirection="ltr"
+        tools:ignore="UnusedAttribute">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginEnd="8dp"
+            android:layoutDirection="ltr"
+            android:orientation="horizontal"
+            tools:ignore="RtlCompat">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+
+                >
+
+
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/msg_right_bg"
+
+                    >
+                    <TextView
+                        android:id="@+id/tvMsg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:padding="10sp"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        android:text="@{messagemodel.message}"
+                        android:layout_marginStart="29dp"
+                        android:gravity="center"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginTop="3sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentStart="true" />
+                </RelativeLayout>
+                <TextView
+                    android:id="@+id/tv_time"
+                    date="@{messagemodel.date}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+
+                    android:layout_marginBottom="5dp"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/image"
+                user_image="@{messagemodel.from.logo}"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="top" />
+        </LinearLayout>
+    </RelativeLayout>
+</layout>

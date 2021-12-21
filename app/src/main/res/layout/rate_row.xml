@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="model"
+            type="com.white.models.SingleDoctorModel.Rates" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        app:cardBackgroundColor="@color/colorPrimary"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorPrimary"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+                        android:singleLine="true"
+                        android:text='@{model.created_at.split("T")[0]}'
+                        android:textColor="@color/white" />
+
+                    <com.iarcuschin.simpleratingbar.SimpleRatingBar
+                        android:id="@+id/rateBar"
+                        rate="@{model.rate}"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:transitionName="rateBar"
+                        app:srb_borderColor="@color/gray2"
+                        app:srb_fillColor="@color/rate_color"
+                        app:srb_isIndicator="true"
+                        app:srb_numberOfStars="5"
+                        app:srb_rating="5"
+                        android:layout_marginEnd="8dp"
+                        app:srb_starBackgroundColor="@color/gray2"
+                        app:srb_starBorderWidth="1"
+                        app:srb_starSize="14dp"
+                        app:srb_starsSeparation="2dp"
+                        tools:ignore="UnusedAttribute" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center_vertical"
+                        android:padding="3dp"
+                        android:src="@drawable/ic_user"
+                        app:tint="@color/gray9" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:singleLine="true"
+                        android:textSize="14sp"
+
+                        android:text="@{model.patient_fk.name}"
+                        android:textColor="@color/gray9" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_weight="1"
+                        android:textSize="14sp"
+
+                        android:text="@{model.comment}"
+                        android:textColor="@color/gray9" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
